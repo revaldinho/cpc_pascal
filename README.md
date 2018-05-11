@@ -18,13 +18,14 @@ ASCII text: FROMAMS.COM, TOAMS.COM. These aren't greatly convenient to use with 
 AMSDOS version or if editing on a modern machine and storing files on .dsk images
 for use with emulators or USB/SD card systems.
 
-The two utilities here written in Python3 do the same task on Linux or MacOS:
+The two utilities here written in Python3 do the same task as TOAMS and FROMAMS on 
+Linux or MacOS:
 
-  o asc2pas.py
-  o pas2asc.py
+  * asc2pas.py
+  * pas2asc.py
 
 Both will translate from the AMSDOS file format to and from plain ASCII text. Optionally
-both and strip or add line numbers (necessary only for Hisoft's built in editor rather than
+both can strip or add line numbers (necessary only for Hisoft's built in editor rather than
 the language itself) so that syntax colouring can be used in Emacs or other editors.
 
 
