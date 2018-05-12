@@ -4,7 +4,7 @@
 iDSK newdisk.dsk -n
 
 foreach file ( sphere hello incr )
-        python ../utils/asc2pas.py -a ${file}.p -p ${file}.hsp -l
+        make ${file}.hsp
         iDSK newdisk.dsk -i ${file}.hsp -t 1
 end
 
