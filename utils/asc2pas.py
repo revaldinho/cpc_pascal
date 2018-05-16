@@ -88,7 +88,7 @@ def mainloop( text, verbose, tabmod, addlinenum):
                     indent += ' '* (tabmod - (len(indent) % tabmod))
             indent = indent[:-2] ## strip back one space
 
-            if '(*' in fields[1]:
+            if '(*' in fields[1] or '{' in fields[1]:
                 outtext.extend( ord(c) for c in fields[1][fields[1].find('(*'):] )
                 comment = True                    
                                 
@@ -106,9 +106,17 @@ def mainloop( text, verbose, tabmod, addlinenum):
                         if word[cptr] == "'":
                             verbatim = not verbatim  
                         elif word[cptr] == "(" and cptr<(len(word)-1) and word[cptr+1]=="*":
-                            comment = True
+                            if not verbatim:
+                                comment = True
+                        elif word[cptr] == "{" :
+                            if not verbatim:
+                                comment = True                                
                         elif word[cptr] == "*" and cptr<(len(word)-1) and word[cptr+1]==")":
-                            comment = False                        
+                            if not verbatim:
+                                comment = False
+                        elif word[cptr] == "}" :
+                            if not verbatim:
+                                comment = False                                                                
                         if word[cptr]=="\t":
                             outtext.append( ord(' '))
                             outtext.extend( [ord(' ')] * (tabmod - (len(indent) % tabmod)) if ( len(indent)%tabmod) else [] )
