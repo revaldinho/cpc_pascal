@@ -3,7 +3,7 @@
 
 iDSK newdisk.dsk -n
 
-foreach file ( sphere hello incr sphere0 sphere1 sphere2)
+foreach file ( sphere hello incr espigot pispigot )
         make ${file}.hsp
         iDSK newdisk.dsk -i ${file}.hsp -t 1
 end
