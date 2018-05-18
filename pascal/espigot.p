@@ -4,8 +4,8 @@
 program espigot;
 
 const
-   digits = 256;
-   cols   = 258;           
+   digits = 1024;
+   cols   = 1026;           
 
 var
    i, j      : integer;
