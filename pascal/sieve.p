@@ -15,8 +15,7 @@ begin
       mem[i] := false ;
       
    i:=3;
-   while i < maxnum do
-   begin
+   repeat
       if not mem[i DIV 2] then
       begin
          j:=i+i; 
@@ -27,16 +26,13 @@ begin
             j :=j+i;
          end;
       end;
-      i := i+2;               
-   end;
+      i := i+2;
+   until i> maxnum;
 
    i:=3;
-   while i< maxnum do
-   begin
+   repeat
       if not mem[i DIV 2] then write(i);
       i := i+2;
-   end;
-   
-   writeln;
-   
+   until i> maxnum;
+   writeln;   
 end.
