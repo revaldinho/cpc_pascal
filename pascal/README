@@ -8,4 +8,15 @@ foreach file ( sphere hello incr espigot pispigot sieve )
         iDSK newdisk.dsk -i ${file}.hsp -t 1
 end
 
+foreach file ( `ls -1 ../basic/*.bas` )
+        cp $file $file:r.asc
+        iDSK newdisk.dsk -i $file:r.asc -t 1
+        rm $file:r.asc
+end
+
+foreach file ( `ls -1 ../basic/*.bbc` )
+        iDSK newdisk.dsk -i ${file} -t 1
+end
+
+
 iDSK newdisk.dsk -l
