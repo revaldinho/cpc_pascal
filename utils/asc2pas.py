@@ -88,8 +88,11 @@ def mainloop( text, verbose, tabmod, addlinenum):
                     indent += ' '* (tabmod - (len(indent) % tabmod))
             indent = indent[:-2] ## strip back one space
 
-            if '(*' in fields[1] or '{' in fields[1]:
+            if '(*' in fields[1] in fields[1]:
                 outtext.extend( ord(c) for c in fields[1][fields[1].find('(*'):] )
+                comment = True                                    
+            if '{' in fields[1]:
+                outtext.extend( ord(c) for c in fields[1][fields[1].find('{'):] )
                 comment = True                    
                                 
             for word in fields[2:]:
